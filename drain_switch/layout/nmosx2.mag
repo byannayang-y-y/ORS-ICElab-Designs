@@ -1,0 +1,25 @@
+magic
+tech gf180mcuD
+magscale 1 10
+timestamp 1793206820
+<< mvndiff >>
+rect 164 770 404 784
+rect 164 650 178 770
+rect 390 650 404 770
+rect 164 611 404 650
+<< mvndiffc >>
+rect 178 650 390 770
+<< metal1 >>
+rect 167 770 401 771
+rect 167 650 178 770
+rect 390 650 401 770
+rect 167 649 401 650
+use NmosBaseCell  NmosBaseCell_0
+timestamp 1793140947
+transform 1 0 244 0 1 213
+box -244 -213 324 105
+use NmosBaseCell  NmosBaseCell_1
+timestamp 1793140947
+transform 1 0 244 0 1 531
+box -244 -213 324 105
+<< end >>

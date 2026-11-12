@@ -1,0 +1,47 @@
+Flattening unmatched subcell NmosBaseCell in circuit nmosx4 (0)(4 instances)
+Flattening unmatched subcell NmosBaseCell in circuit nmosx2 (0)(2 instances)
+Flattening unmatched subcell PmosBaseCell in circuit pmosx4v2 (0)(4 instances)
+Flattening unmatched subcell nmosx4 in circuit DrainSwitchTransistorsTry (0)(2 instances)
+Flattening unmatched subcell nmosx2 in circuit DrainSwitchTransistorsTry (0)(2 instances)
+Flattening unmatched subcell pmosx4v2 in circuit DrainSwitchTransistorsTry (0)(4 instances)
+
+Subcircuit summary:
+Circuit 1: DrainSwitchTransistorsTry       |Circuit 2: SWC_Drain                       
+-------------------------------------------|-------------------------------------------
+nfet_05v0 (12)                             |nfet_05v0 (12)                             
+pfet_05v0 (16)                             |pfet_05v0 (16)                             
+Number of devices: 28                      |Number of devices: 28                      
+Number of nets: 26                         |Number of nets: 26                         
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+Circuits match correctly.
+
+Subcircuit pins:
+Circuit 1: DrainSwitchTransistorsTry       |Circuit 2: SWC_Drain                       
+-------------------------------------------|-------------------------------------------
+VINJ                                       |VINJ                                       
+GND                                        |GND                                        
+Drainline_Direct                           |Drainline_Direct                           
+Drainline_Indirect                         |Drainline_Indirect                         
+SELN[2]                                    |SELN[2]                                    
+SELN[3]                                    |SELN[3]                                    
+SELN[0]                                    |SELN[0]                                    
+SELN[1]                                    |SELN[1]                                    
+Vd_R[1]                                    |Vd_R[1]                                    
+Vd_R[0]                                    |Vd_R[0]                                    
+Vd_R[3]                                    |Vd_R[3]                                    
+Vd_R[2]                                    |Vd_R[2]                                    
+SEL[0]                                     |SEL[0]                                     
+SEL[1]                                     |SEL[1]                                     
+SEL[2]                                     |SEL[2]                                     
+SEL[3]                                     |SEL[3]                                     
+Vd_P[1]                                    |Vd_P[1]                                    
+Vd_P[0]                                    |Vd_P[0]                                    
+Vd_P[3]                                    |Vd_P[3]                                    
+Vd_P[2]                                    |Vd_P[2]                                    
+PROG                                       |PROG                                       
+RUN                                        |RUN                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes DrainSwitchTransistorsTry and SWC_Drain are equivalent.
+Circuits match uniquely.

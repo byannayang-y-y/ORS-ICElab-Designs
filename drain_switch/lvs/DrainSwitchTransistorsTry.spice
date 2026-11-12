@@ -1,0 +1,63 @@
+* NGSPICE file created from DrainSwitchTransistorsTry.ext - technology: gf180mcuD
+
+.subckt NmosBaseCell a_n80_n213# a_n80_80# a_n244_n40# VSUBS
+X0 a_n80_80# a_n244_n40# a_n80_n213# VSUBS nfet_05v0 ad=0.15p pd=2.65u as=1.038p ps=4.13u w=1.2u l=0.6u
+.ends
+
+.subckt nmosx4 NmosBaseCell_0/a_n244_n40# NmosBaseCell_1/a_n244_n40# NmosBaseCell_2/a_n244_n40#
++ NmosBaseCell_3/a_n244_n40# a_54_1327# NmosBaseCell_0/a_n80_80# NmosBaseCell_0/a_n80_n213#
++ NmosBaseCell_1/a_n80_80# NmosBaseCell_2/a_n80_80# VSUBS
+XNmosBaseCell_0 NmosBaseCell_0/a_n80_n213# NmosBaseCell_0/a_n80_80# NmosBaseCell_0/a_n244_n40#
++ VSUBS NmosBaseCell
+XNmosBaseCell_1 NmosBaseCell_0/a_n80_80# NmosBaseCell_1/a_n80_80# NmosBaseCell_1/a_n244_n40#
++ VSUBS NmosBaseCell
+XNmosBaseCell_2 NmosBaseCell_1/a_n80_80# NmosBaseCell_2/a_n80_80# NmosBaseCell_2/a_n244_n40#
++ VSUBS NmosBaseCell
+XNmosBaseCell_3 NmosBaseCell_2/a_n80_80# a_54_1327# NmosBaseCell_3/a_n244_n40# VSUBS
++ NmosBaseCell
+.ends
+
+.subckt nmosx2 NmosBaseCell_0/a_n244_n40# NmosBaseCell_1/a_n244_n40# a_164_611# NmosBaseCell_0/a_n80_n213#
++ NmosBaseCell_0/a_n80_80# VSUBS
+XNmosBaseCell_0 NmosBaseCell_0/a_n80_n213# NmosBaseCell_0/a_n80_80# NmosBaseCell_0/a_n244_n40#
++ VSUBS NmosBaseCell
+XNmosBaseCell_1 NmosBaseCell_0/a_n80_80# a_164_611# NmosBaseCell_1/a_n244_n40# VSUBS
++ NmosBaseCell
+.ends
+
+.subckt PmosBaseCell a_n20_n213# a_n20_80# a_n104_n40# w_n140_n333#
+X0 a_n20_80# a_n104_n40# a_n20_n213# w_n140_n333# pfet_05v0 ad=0.3p pd=5.05u as=2.076p ps=6.53u w=2.4u l=0.6u
+.ends
+
+.subckt pmosx4v2 PmosBaseCell_0/a_n20_n213# PmosBaseCell_0/a_n20_80# PmosBaseCell_1/a_n20_80#
++ PmosBaseCell_2/a_n20_80# a_84_1247# w_n36_982# PmosBaseCell_0/a_n104_n40# PmosBaseCell_1/a_n104_n40#
++ PmosBaseCell_2/a_n104_n40# PmosBaseCell_3/a_n104_n40#
+XPmosBaseCell_0 PmosBaseCell_0/a_n20_n213# PmosBaseCell_0/a_n20_80# PmosBaseCell_0/a_n104_n40#
++ w_n36_982# PmosBaseCell
+XPmosBaseCell_1 PmosBaseCell_0/a_n20_80# PmosBaseCell_1/a_n20_80# PmosBaseCell_1/a_n104_n40#
++ w_n36_982# PmosBaseCell
+XPmosBaseCell_2 PmosBaseCell_1/a_n20_80# PmosBaseCell_2/a_n20_80# PmosBaseCell_2/a_n104_n40#
++ w_n36_982# PmosBaseCell
+XPmosBaseCell_3 PmosBaseCell_2/a_n20_80# a_84_1247# PmosBaseCell_3/a_n104_n40# w_n36_982#
++ PmosBaseCell
+.ends
+
+.subckt DrainSwitchTransistorsTry Drainline_Direct Drainline_Indirect PROG RUN VINJ
++ GND Vd_R[0] Vd_P[0] Vd_P[1] Vd_R[1] Vd_R[2] Vd_P[2] Vd_P[3] Vd_R[3] SEL[0] SELN[0]
++ SEL[1] SELN[1] SEL[2] SELN[2] SEL[3] SELN[3]
+Xnmosx4_0 PROG SEL[3] SEL[2] PROG Vd_R[2] m1_2400_1716# Vd_R[3] Drainline_Direct m1_2390_2356#
++ GND nmosx4
+Xnmosx4_1 PROG SEL[1] SEL[0] PROG Vd_R[0] m1_7670_1830# Vd_R[1] Drainline_Direct m1_7680_2470#
++ GND nmosx4
+Xnmosx2_0 SEL[3] SEL[2] Vd_P[2] Vd_P[3] Drainline_Indirect GND nmosx2
+Xnmosx2_1 SEL[1] SEL[0] Vd_P[0] Vd_P[1] Drainline_Indirect GND nmosx2
+Xpmosx4v2_0 Vd_R[1] m1_7670_1830# Drainline_Direct m1_7680_2470# Vd_R[0] VINJ RUN
++ SELN[1] SELN[0] RUN pmosx4v2
+Xpmosx4v2_1 Vd_R[3] m1_2400_1716# Drainline_Direct m1_2390_2356# Vd_R[2] VINJ RUN
++ SELN[3] SELN[2] RUN pmosx4v2
+Xpmosx4v2_2 VINJ Vd_P[3] Drainline_Indirect Vd_P[2] VINJ VINJ SEL[3] SELN[3] SELN[2]
++ SEL[2] pmosx4v2
+Xpmosx4v2_3 VINJ Vd_P[1] Drainline_Indirect Vd_P[0] VINJ VINJ SEL[1] SELN[1] SELN[0]
++ SEL[0] pmosx4v2
+.ends
+

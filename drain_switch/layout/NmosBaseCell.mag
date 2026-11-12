@@ -1,0 +1,20 @@
+magic
+tech gf180mcuD
+magscale 1 10
+timestamp 1793140947
+<< mvnmos >>
+rect -80 -40 160 80
+<< mvndiff >>
+rect -80 80 160 105
+rect -80 -79 160 -40
+rect -80 -199 -66 -79
+rect 146 -199 160 -79
+rect -80 -213 160 -199
+<< mvndiffc >>
+rect -66 -199 146 -79
+<< metal1 >>
+rect -77 -200 157 -78
+<< polysilicon >>
+rect -244 -40 -80 80
+rect 160 -40 324 80
+<< end >>
