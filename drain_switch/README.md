@@ -14,6 +14,10 @@ during run / program mode.
 
 28 devices total: 12 × `nfet_05v0` (W 1.2 µm / L 0.6 µm), 16 × `pfet_05v0` (W 2.4 µm / L 0.6 µm).
 
+## Schematic (`schematic/`, xschem)
+- `SWC_Drain.sch` – transistor-level schematic (instances `XM[0:3]` … `XM[24:27]`).
+  Netlist for LVS with *Simulation → LVS → LVS netlist + Top level is a .subckt*.
+
 ## Layout (`layout/`, Magic, `tech gf180mcuD`)
 - `DrainSwitchTransistorsTry.mag` – top cell. Height 10.9 µm (y 860–3040 internal units),
   rows 0–1 and rows 2–3 placed side by side to fit the pitch.
